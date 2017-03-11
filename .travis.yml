@@ -5,10 +5,7 @@ node_js:
   - "6"
   - "5"
   - "4"
-cache:
-  yarn: true
 install: 
-  - npm install -g yarn
-  - yarn
+  - npm run install
 script: 
   - npm run build
