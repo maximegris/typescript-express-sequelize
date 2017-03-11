@@ -8,6 +8,7 @@ node_js:
 cache:
   yarn: true
 install: 
+  - npm install -g yarn
   - yarn
 script: 
   - npm start
