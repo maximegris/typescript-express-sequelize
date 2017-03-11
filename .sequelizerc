@@ -1,0 +1,8 @@
+const path = require('path')
+
+module.exports = {
+  "config": path.resolve('./src/sqlz/config', 'config.json'),
+  "models-path": path.resolve('./src/sqlz/models'),
+  "seeders-path": path.resolve('./src/sqlz/seeders'),
+  "migrations-path": path.resolve('./src/sqlz/migrations')
+}
