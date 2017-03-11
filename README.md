@@ -3,7 +3,7 @@
 
 # Introduction
 
-Bootstrap easily your Typescript v2 project with NodeJS + Express + Sequelize ORM.
+Easily bootstrap your Typescript v2 project with NodeJS + Express + Sequelize ORM. :heart:
 
 ## Installation
 
@@ -45,12 +45,6 @@ npm start
 ```
 
 Your web server is now exposed on http://localhost:3000
-
-## Create a new Sequelize Entity
-
-```bash
-npm run build
-```
 
 ## Build
 
