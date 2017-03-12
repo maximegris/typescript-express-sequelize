@@ -14,10 +14,7 @@ interface DbConnection {
 }
 let db = {}
 
-// I use the node-config package to manage the DB config you can choose
-// to stick with the original version. And I removed environment variable
-// support because I don't need it.
-const dbConfig = config['development']
+const dbConfig = config[process.env.NODE_ENV]
 const sequelize = new Sequelize(
     dbConfig['database'],
     dbConfig['username'],

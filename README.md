@@ -78,4 +78,5 @@ The [github issue tracker](https://github.com/maximegris/typescript-express-sequ
 
 ## Roadmap
 - [x] Add Sequelize Typescript example with association
+- [x] Manage multiple database configuration with NODE_ENV
 - [ ] Add Swagger API Framework

@@ -17,14 +17,16 @@
   "scripts": {
     "build": "gulp build",
     "doc": "gulp generate:doc",
-    "start": "gulp watch",
-    "test": "gulp test",
+    "start": "cross-env NODE_ENV=development gulp watch",
+    "start:prod": "cross-env NODE_ENV=production gulp watch",
+    "test": "cross-env NODE_ENV=test gulp test",
     "tslint": "gulp tslint"
   },
   "dependencies": {
     "@types/express-validator": "^2.20.33",
     "body-parser": "~1.17.0",
     "cors": "^2.8.1",
+    "cross-env": "^3.2.3",
     "express": "~4.15.0",
     "express-boom": "^2.0.0",
     "express-validator": "^3.1.2",
