@@ -27,10 +27,10 @@ const REMAP_COVERAGE = "remap:coverage";
 
 const TS_SRC_GLOB = "./src/**/*.ts";
 const TS_TEST_GLOB = "./test/**/*.ts";
-const JS_TEST_GLOB = "./build/test/**/*.js";
-const JS_SRC_GLOB = "./build/src/**/*.js";
-const TS_GLOB = [TS_SRC_GLOB, TS_TEST_GLOB];
-const STATIC_FILES = ['./src/**/*.json', './src/_public/**/*.*']
+const JS_TEST_GLOB = "./build/**/*.js";
+const JS_SRC_GLOB = "./build/**/*.js";
+const TS_GLOB = [TS_SRC_GLOB];
+const STATIC_FILES = ['./src/**/*.json']
 
 const tsProject = typescript.createProject("tsconfig.json");
 
@@ -61,16 +61,16 @@ gulp.task(TSLINT, function() {
 
 // Compiles all *.ts-files to *.js-files.
 gulp.task(COPY_STATIC_FILES, function() {
-    return gulp.src(STATIC_FILES,  {base: "."}) 
-    .pipe(gulp.dest("./build"));
+    return gulp.src(STATIC_FILES) 
+    .pipe(gulp.dest("build"));
 });
 
 gulp.task(COMPILE_TYPESCRIPT, function() {
-    return gulp.src(TS_GLOB, {base: "."})
+    return gulp.src(TS_GLOB)
         .pipe(sourcemaps.init())
         .pipe(tsProject())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest("./build"));
+        .pipe(sourcemaps.write(".", { sourceRoot: "../src" }))
+        .pipe(gulp.dest("build"));
 });
 
 // Runs all required steps for the build in sequence.
@@ -142,7 +142,7 @@ gulp.task(TEST, function(callback) {
 gulp.task("watch", [BUILD], function() {
     return nodemon({
         ext: "ts js json",
-        script: "build/src/server.js",
+        script: "build/server.js",
         watch: ["src/*", "test/*"],
         tasks: [BUILD]
     });

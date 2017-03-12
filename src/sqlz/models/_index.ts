@@ -5,10 +5,12 @@ import * as Sequelize from 'sequelize'
 const config = require('../config/config.json')
 
 // Import model specification from its own definition file.
-import {UserInstance, UserAttributes} from './user'
+import {LanguageInstance, LanguageAttributes} from './language'
+import {AppUserInstance, AppUserAttributes} from './appuser'
 
 interface DbConnection {
-  User: Sequelize.Model<UserInstance, UserAttributes>
+    Language: Sequelize.Model<LanguageInstance, LanguageAttributes>,
+    AppUser: Sequelize.Model<AppUserInstance, AppUserAttributes>
 }
 let db = {}
 
@@ -31,6 +33,8 @@ fs
 })
 .forEach(function(file) {
     const model = sequelize['import'](path.join(__dirname, file))
+    // NOTE: you have to change from the original property notation to
+    // index notation or tsc will complain about undefined property.
     db[model['name']] = model
 })
 

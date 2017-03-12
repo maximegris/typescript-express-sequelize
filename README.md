@@ -36,6 +36,9 @@ Sequelize configuration and entities can be found in /Src/sqlz directory.
 | migrations  | Your database migrations scripts. Keep this files in Javascript and run sequelize db:migrate to migrate your database schema. |
 | models | Sequelize entities. |
 
+First, define your database schema in config/config.json file. 
+Use [Sequelize CLI](http://docs.sequelizejs.com/en/v3/docs/migrations/) to initialize your database. 
+
 In models/ directory, the index.ts file define the DbConnection interface. When you create a new Sequelize entity, add its reference in this interface to fully use Typescript's superpower !
 
 ## Run the project
@@ -46,16 +49,33 @@ npm start
 
 Your web server is now exposed on http://localhost:3000
 
+### GET   /api/languages
+curl -X GET -H 'Content-Type: application/json' http://localhost:3000/api/languages
+
+### POST   /api/languages
+curl -X POST -H 'Content-Type: application/json' -d '{"label":"French","name":"fr"}' http://localhost:3000/api/languages
+
+### GET  /api/appusers
+curl -X GET -H 'Content-Type: application/json' http://localhost:3000/api/appusers
+
+### POST  /api/appusers
+curl -X POST -H 'Content-Type: application/json' -d '{"email":"foo@bar.com","pwd":"something"}' http://localhost:3000/api/appusers
+
 ## Build
 
 ```bash
 npm run build
 ```
 
+## Debug with Typescript and VSCode
+
+Add breakpoints to your Typescript source code and launch in VSCode the "Debug Typescript" task.  
+When you'll access to an endpoint, you will be able to debug directly in your Typescript's files.
+
 ## Questions and issues
 
 The [github issue tracker](https://github.com/maximegris/typescript-express-sequelize/issues) is **_only_** for bug reports and feature requests.
 
 ## Roadmap
-- [x] Add Sequelize Typescript example
+- [x] Add Sequelize Typescript example with association
 - [ ] Add Swagger API Framework

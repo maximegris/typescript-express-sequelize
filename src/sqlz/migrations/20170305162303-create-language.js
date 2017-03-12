@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => 
-    queryInterface.createTable('Users', {
+    queryInterface.createTable('Languages', {
       id: {
         allowNull: false,
         type: Sequelize.UUID,
@@ -26,5 +26,5 @@ module.exports = {
       }
     })
   ,
-  down: (queryInterface, Sequelize) => queryInterface.dropTable('Users')
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('Languages')
 }
