@@ -15,7 +15,7 @@ npm install
 
 ```bash
 npm install -g yarn
-yarn install
+yarn
 ```
 
 The build tasks use **Gulp tasks runner**. Typescript is transpiled to Javascript in the /build directory.  
