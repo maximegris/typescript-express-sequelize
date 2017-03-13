@@ -1,5 +1,5 @@
 import {Request, Response} from 'express'
-import {AppUserDao} from '../dao/_index'
+import {AppUserDao} from '../../dao/_index'
 
 export function create(req: Request, res: Response) {
 
@@ -17,13 +17,6 @@ export function create(req: Request, res: Response) {
             res.boom.badRequest('Validation errors', result.mapped())
         }
     })
-}
-
-export function list(req: Request, res: Response) {
-  return AppUserDao
-    .findAll()
-    .then(appusers => res.status(200).send(appusers))
-    .catch(error => res.boom.badRequest(error))
 }
 
 export function login(req: Request, res: Response) {
