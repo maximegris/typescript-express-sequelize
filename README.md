@@ -67,6 +67,32 @@ curl -X POST -H 'Content-Type: application/json' -d '{"email":"foo@bar.com","pwd
 npm run build
 ```
 
+## Lint your code before you commit!
+
+In a collaborative project, it's always a pain when you have to work on files not correctly formatted.
+Now beofre each commit, yout typescript files are linted based on your tsconfig.json >  .editorconfig > tslint.json files.
+
+```bash
+λ git commit -m "Example precommit"
+
+> husky - npm run -s precommit
+
+25l[14:22:30] Running tasks for src/**/*.ts [started]
+[14:22:30] prettify [started]
+[14:22:31] prettify [completed]
+[14:22:31] git add [started]
+[14:22:31] git add [completed]
+[14:22:31] Running tasks for src/**/*.ts [completed]
+25h25h[master 23c4321] Example precommit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+By the way you can also run the command with a npm script
+
+```bash
+npm run prettify
+```
+
 ## Debug with Typescript and VSCode
 
 Add breakpoints to your Typescript source code and launch in VSCode the "Debug Typescript" task.  

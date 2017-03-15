@@ -4,8 +4,8 @@ import * as boom from 'express-boom'
 import * as morgan from 'morgan'
 import * as cors from 'cors'
 import * as expressValidator from 'express-validator'
-import {json, urlencoded} from 'body-parser'
-import {Express} from 'express'
+import { json, urlencoded } from 'body-parser'
+import { Express } from 'express'
 import * as routes from './routes/_index'
 
 const PORT: number = 3000
@@ -31,7 +31,7 @@ export class Server {
         this.app.use(json())
         this.app.use(boom())
         this.app.use(morgan('combined'))
-                this.app.use(expressValidator())
+        this.app.use(expressValidator())
         this.app.listen(PORT, () => {
             winston.log('info', '--> Server successfully started at port %d', PORT)
         })

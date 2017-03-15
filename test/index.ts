@@ -1,5 +1,5 @@
-import {expect} from 'chai'
-import {addTwo} from '../src/test'
+import { expect } from 'chai'
+import { addTwo } from '../src/test'
 
 describe('Testing demo function', () => {
     it('Should add two to input', () => {

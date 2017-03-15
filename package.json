@@ -19,8 +19,16 @@
     "doc": "gulp generate:doc",
     "start": "cross-env NODE_ENV=development gulp watch",
     "start:prod": "cross-env NODE_ENV=production gulp watch",
-    "test": "cross-env NODE_ENV=test gulp test",
-    "tslint": "gulp tslint"
+    "run:test": "cross-env NODE_ENV=test gulp test",
+    "tslint": "gulp tslint",
+    "precommit": "lint-staged",
+    "prettify": "tsfmt -r --baseDir ./src"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettify",
+      "git add"
+    ]
   },
   "dependencies": {
     "body-parser": "~1.17.0",
@@ -58,12 +66,15 @@
     "gulp-tslint": "~7.0.1",
     "gulp-typedoc": "~2.0.2",
     "gulp-typescript": "~3.1.4",
+    "husky": "^0.13.2",
+    "lint-staged": "^3.4.0",
     "remap-istanbul": "~0.8.4",
     "rimraf": "~2.5.4",
     "run-sequence": "~1.2.2",
     "tslint": "~4.5.1",
     "typedoc": "~0.5.7",
-    "typescript": "~2.2.1"
+    "typescript": "~2.2.1",
+    "typescript-formatter": "^5.1.1"
   },
   "engines": {
     "node": ">=4.0.0"
