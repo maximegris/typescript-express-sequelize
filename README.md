@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/maximegris/typescript-express-sequelize.svg?branch=master)](https://travis-ci.org/maximegris/typescript-express-sequelize) 
+[![Build Status](https://travis-ci.org/maximegris/typescript-express-sequelize.svg?branch=master)](https://travis-ci.org/maximegris/typescript-express-sequelize)
 [![License](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://github.com/maximegris/typescript-express-sequelize/blob/master/LICENSE.md)
+
+![Logo](https://github.com/maximegris/typescript-express-sequelize/tree/master/sequelize.png "Logo")
 
 # Introduction
 
@@ -18,7 +20,7 @@ npm install -g yarn
 yarn
 ```
 
-The build tasks use **Gulp tasks runner**. Typescript is transpiled to Javascript in the /build directory.  
+The build tasks use **Gulp tasks runner**. Typescript is transpiled to Javascript in the /build directory.
 This sample use PostgreSQL database but you can easily change it and use your favorite relational database (npm or yarn command) :
 ```bash
 npm install --save mysql // For both mysql and mariadb dialects
@@ -28,7 +30,7 @@ npm install --save tedious // MSSQL
 
 ## Configure your database
 
-Sequelize configuration and entities can be found in /Src/sqlz directory. 
+Sequelize configuration and entities can be found in /Src/sqlz directory.
 
 | Directory | Description |
 |---|---|
@@ -36,8 +38,8 @@ Sequelize configuration and entities can be found in /Src/sqlz directory.
 | migrations  | Your database migrations scripts. Keep this files in Javascript and run sequelize db:migrate to migrate your database schema. |
 | models | Sequelize entities. |
 
-First, define your database schema in config/config.json file. 
-Use [Sequelize CLI](http://docs.sequelizejs.com/en/v3/docs/migrations/) to initialize your database. 
+First, define your database schema in config/config.json file.
+Use [Sequelize CLI](http://docs.sequelizejs.com/en/v3/docs/migrations/) to initialize your database.
 
 In models/ directory, the index.ts file define the DbConnection interface. When you create a new Sequelize entity, add its reference in this interface to fully use Typescript's superpower !
 
@@ -95,7 +97,7 @@ npm run prettify
 
 ## Debug with Typescript and VSCode
 
-Add breakpoints to your Typescript source code and launch in VSCode the "Debug Typescript" task.  
+Add breakpoints to your Typescript source code and launch in VSCode the "Debug Typescript" task.
 When you'll access to an endpoint, you will be able to debug directly in your Typescript's files.
 
 ## Questions and issues
