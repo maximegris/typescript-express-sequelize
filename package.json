@@ -22,7 +22,10 @@
     "run:test": "cross-env NODE_ENV=test gulp test",
     "tslint": "gulp tslint",
     "precommit": "lint-staged",
-    "prettify": "tsfmt -r --baseDir ./src"
+    "prettify": "tsfmt -r --baseDir ./src",
+    "sqlz:migrate": "./node_modules/.bin/sequelize db:migrate",
+    "sqlz:undo": "./node_modules/.bin/sequelize db:migrate:undo",
+    "sqlz:new": "./node_modules/.bin/sequelize migration:create"  
   },
   "lint-staged": {
     "src/**/*.ts": [
@@ -71,6 +74,7 @@
     "remap-istanbul": "~0.8.4",
     "rimraf": "~2.5.4",
     "run-sequence": "~1.2.2",
+    "sequelize-cli": "^2.7.0",
     "tslint": "~4.5.1",
     "typedoc": "~0.5.7",
     "typescript": "~2.2.1",
