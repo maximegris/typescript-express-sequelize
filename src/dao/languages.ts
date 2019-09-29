@@ -1,9 +1,8 @@
 import * as uuid from 'uuid'
-import db from '../sqlz/models/_index'
-import { LanguageInstance } from './../sqlz/models/language'
+import { Language } from './../sqlz/models/language'
 
-export function create(language: LanguageInstance): Promise<any> {
-  return db.Language
+export function create(language: any): Promise<any> {
+  return Language
     .create({
       id: uuid.v1(),
       label: language.label,
@@ -12,6 +11,6 @@ export function create(language: LanguageInstance): Promise<any> {
 }
 
 export function findAll(): Promise<any> {
-  return db.Language
+  return Language
     .findAll()
 }

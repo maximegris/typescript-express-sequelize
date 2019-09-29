@@ -1,14 +1,14 @@
 import * as uuid from 'uuid'
-import db from '../sqlz/models/_index'
-import { AppUserInstance } from './../sqlz/models/appuser'
+import { AppUser } from './../sqlz/models/appuser'
+import { Language } from '../sqlz/models/language'
 
-export function create(appUser: AppUserInstance): Promise<any> {
+export function create(appUser: any): Promise<any> {
 
-  return db.Language.findOne({
+  return Language.findOne({
     where: { name: 'fr' }
   })
     .then(language => {
-      return db.AppUser
+      return AppUser
         .create({
           id: uuid.v1(),
           email: appUser.email,
@@ -19,17 +19,17 @@ export function create(appUser: AppUserInstance): Promise<any> {
 }
 
 export function findAll(): Promise<any> {
-  return db.AppUser
+  return AppUser
     .findAll({ include: [{ all: true }] })
 }
 
-export function login(appUser: AppUserInstance): Promise<any> {
-  return db.AppUser
+export function login(appUser: any): Promise<any> {
+  return AppUser
     .findOne({
       where: {
         email: appUser.email,
         pwd: appUser.pwd
       },
-      include: [db.Language]
+      include: [Language]
     })
 }

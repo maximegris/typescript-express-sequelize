@@ -1,41 +1,27 @@
-import * as Sequelize from 'sequelize'
+import { Model, STRING, UUID, Deferrable } from 'sequelize'
+import sequelize from './_index'
+import { Language } from './language'
 
-export interface AppUserAttributes {
-  id?: string
-  active?: boolean,
-  avatar?: string,
-  email?: string,
-  firstName?: string,
-  lastName?: string,
-  notification?: boolean,
-  phone?: string,
-  pwd?: string,
-  languageId?: string
+export class AppUser extends Model {
+
 }
 
-export interface AppUserInstance extends Sequelize.Instance<AppUserAttributes> {
+export class AppUserModel {
   id: string
+  name: string
+  pwd: string
   createdAt: Date
   updatedAt: Date
-
-  email: string,
-  pwd: string,
-  languageId: string
 }
 
-export default function defineUser(sequelize: Sequelize.Sequelize, DataTypes) {
-  const AppUser = sequelize.define('AppUser', {
-    email: DataTypes.STRING,
-    pwd: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        AppUser.belongsTo(models.Language, {
-          foreignKey: 'languageId',
-          onDelete: 'CASCADE',
-        })
-      }
-    }
-  });
-  return AppUser
-}
+AppUser.init(
+  {
+    email: STRING(50),
+    pwd: STRING(50)
+  },
+  { sequelize, modelName: 'AppUser' }
+)
+
+AppUser.belongsTo(Language, {
+  foreignKey: 'languageId'
+})

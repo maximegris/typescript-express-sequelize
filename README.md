@@ -1,12 +1,11 @@
 [![Logo](./sequelize.png)](http://docs.sequelizejs.com)
 
 [![Build Status](https://travis-ci.org/maximegris/typescript-express-sequelize.svg?branch=master)](https://travis-ci.org/maximegris/typescript-express-sequelize)
-[![Dependency Status](https://dependencyci.com/github/maximegris/typescript-express-sequelize/badge)](https://dependencyci.com/github/maximegris/typescript-express-sequelize)
 [![License](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://github.com/maximegris/typescript-express-sequelize/blob/master/LICENSE.md)
 
 # Introduction
 
-Easily bootstrap your Typescript v2 project with NodeJS + Express + Sequelize ORM. :heart:
+Easily bootstrap your Typescript project with NodeJS + Express + Sequelize ORM. :heart:
 
 ## Installation
 
