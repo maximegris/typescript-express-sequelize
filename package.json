@@ -1,7 +1,7 @@
 {
   "name": "typescript-express-sequelize",
-  "version": "1.1.2",
-  "description": "Typescript V2 project with Express + Sequelize",
+  "version": "2.0.0",
+  "description": "Sample project with Express + Sequelize + Typescript",
   "homepage": "https://github.com/maximegris/typescript-express-sequelize",
   "author": {
     "name": "Maxime GRIS",
@@ -21,67 +21,62 @@
     "start:prod": "cross-env NODE_ENV=production gulp watch",
     "run:test": "cross-env NODE_ENV=test gulp test",
     "tslint": "gulp tslint",
-    "precommit": "lint-staged",
-    "prettify": "tsfmt -r --baseDir ./src",
+    "prettify": "./node_modules/.bin/tsfmt -r --baseDir ./src",
     "sqlz:migrate": "./node_modules/.bin/sequelize db:migrate",
     "sqlz:undo": "./node_modules/.bin/sequelize db:migrate:undo",
-    "sqlz:new": "./node_modules/.bin/sequelize migration:create"  
+    "sqlz:new": "./node_modules/.bin/sequelize migration:create"
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "prettify",
+      "npm run prettify",
       "git add"
     ]
   },
   "dependencies": {
-    "body-parser": "~1.17.0",
-    "cors": "~2.8.1",
-    "cross-env": "~3.2.3",
-    "express": "~4.15.0",
-    "express-boom": "~2.0.0",
-    "express-validator": "~3.1.2",
-    "morgan": "~1.8.1",
-    "pg": "~6.1.2",
-    "pg-hstore": "~2.3.2",
-    "sequelize": "~3.30.2",
-    "uuid": "~3.0.1",
-    "winston": "~2.3.1"
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "cross-env": "6.0.0",
+    "express": "4.17.1",
+    "express-boom": "3.0.0",
+    "morgan": "1.9.1",
+    "pg": "6.1.2",
+    "pg-hstore": "2.3.2",
+    "sequelize": "3.30.2",
+    "uuid": "3.3.3",
+    "winston": "3.2.1"
   },
   "devDependencies": {
-    "@types/body-parser": "~0.0.33",
-    "@types/chai": "~3.4.35",
-    "@types/express": "~4.0.35",
-    "@types/express-validator": "~2.20.33",
-    "@types/mocha": "~2.2.39",
-    "@types/morgan": "~1.7.32",
-    "@types/sequelize": "~3.4.40",
-    "@types/winston": "~2.2.0",
-    "chai": "~3.5.0",
-    "extendify": "~1.0.0",
-    "glob": "~7.1.1",
-    "gulp": "~3.9.1",
-    "gulp-istanbul": "~1.1.1",
-    "gulp-json-refs": "~0.1.1",
-    "gulp-mocha": "~3.0.1",
-    "gulp-nodemon": "~2.2.1",
-    "gulp-plumber": "~1.1.0",
-    "gulp-sourcemaps": "~2.4.0",
-    "gulp-tslint": "~7.0.1",
-    "gulp-typedoc": "~2.0.2",
-    "gulp-typescript": "~3.1.4",
-    "husky": "^0.13.2",
-    "lint-staged": "^3.4.0",
-    "remap-istanbul": "~0.8.4",
-    "rimraf": "~2.5.4",
-    "run-sequence": "~1.2.2",
-    "sequelize-cli": "^2.7.0",
-    "tslint": "~4.5.1",
-    "typedoc": "~0.5.7",
-    "typescript": "~2.2.1",
-    "typescript-formatter": "^5.1.1"
+    "chai": "3.5.0",
+    "extendify": "1.0.0",
+    "glob": "7.1.1",
+    "gulp": "3.9.1",
+    "gulp-istanbul": "1.1.1",
+    "gulp-json-refs": "0.1.1",
+    "gulp-mocha": "3.0.1",
+    "gulp-nodemon": "2.2.1",
+    "gulp-plumber": "1.1.0",
+    "gulp-sourcemaps": "2.4.0",
+    "gulp-tslint": "7.0.1",
+    "gulp-typedoc": "2.0.2",
+    "gulp-typescript": "3.1.4",
+    "husky": "3.0.7",
+    "lint-staged": "9.4.0",
+    "remap-istanbul": "0.8.4",
+    "rimraf": "2.5.4",
+    "run-sequence": "1.2.2",
+    "sequelize-cli": "2.7.0",
+    "tslint": "5.20.0",
+    "typedoc": "0.15.0",
+    "typescript": "3.6.3",
+    "typescript-formatter": "7.2.2"
   },
   "engines": {
     "node": ">=4.0.0"
   },
-  "license": "SEE LICENSE IN LICENSE.md"
+  "license": "SEE LICENSE IN LICENSE.md",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }

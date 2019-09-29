@@ -20,14 +20,14 @@ export default function defineUser(sequelize: Sequelize.Sequelize, DataTypes) {
     label: DataTypes.STRING(255),
     name: DataTypes.STRING(50)
   }, {
-      classMethods: {
-        associate: function(models) {
-          Language.hasMany(models.AppUser, {
-            foreignKey: 'languageId',
-            as: 'appUsers'
-          })
-        }
+    classMethods: {
+      associate: function(models) {
+        Language.hasMany(models.AppUser, {
+          foreignKey: 'languageId',
+          as: 'appUsers'
+        })
       }
-    })
+    }
+  })
   return Language
 }

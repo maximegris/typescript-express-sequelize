@@ -28,14 +28,14 @@ export default function defineUser(sequelize: Sequelize.Sequelize, DataTypes) {
     email: DataTypes.STRING,
     pwd: DataTypes.STRING
   }, {
-      classMethods: {
-        associate: function(models) {
-          AppUser.belongsTo(models.Language, {
-            foreignKey: 'languageId',
-            onDelete: 'CASCADE',
-          })
-        }
+    classMethods: {
+      associate: function(models) {
+        AppUser.belongsTo(models.Language, {
+          foreignKey: 'languageId',
+          onDelete: 'CASCADE',
+        })
       }
-    });
+    }
+  });
   return AppUser
 }

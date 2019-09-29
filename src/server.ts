@@ -31,7 +31,6 @@ export class Server {
     this.app.use(json())
     this.app.use(boom())
     this.app.use(morgan('combined'))
-    this.app.use(expressValidator())
     this.app.listen(PORT, () => {
       winston.log('info', '--> Server successfully started at port %d', PORT)
     })

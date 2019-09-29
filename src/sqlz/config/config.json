@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "diapa",
     "database": "app-dev",
     "host": "127.0.0.1",
     "port": 5432,
@@ -12,7 +12,7 @@
   },
   "test": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "diapa",
     "database": "app-test",
     "host": "127.0.0.1",
     "port": 5432,
