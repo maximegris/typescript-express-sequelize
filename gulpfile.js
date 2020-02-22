@@ -91,7 +91,7 @@ gulp.task(GENERATE_DOC, gulp.series(CLEAN_DOC, function () {
 
 // Sets up the istanbul coverage
 gulp.task(PRETEST, function () {
-  gulp.src(JS_SRC_GLOB)
+  return gulp.src(JS_SRC_GLOB)
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(istanbul({ includeUntested: true }))
     .pipe(istanbul.hookRequire())
