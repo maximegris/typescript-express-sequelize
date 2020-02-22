@@ -1,6 +1,6 @@
 {
   "name": "typescript-express-sequelize",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Sample project with Express + Sequelize + Typescript",
   "homepage": "https://github.com/maximegris/typescript-express-sequelize",
   "author": {
