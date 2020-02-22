@@ -28,8 +28,7 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "npm run prettify",
-      "git add"
+      "npm run prettify"
     ]
   },
   "dependencies": {
