@@ -72,7 +72,7 @@ npm run build
 ## Lint your code before you commit!
 
 In a collaborative project, it's always a pain when you have to work on files not correctly formatted.
-Now beofre each commit, yout typescript files are linted based on your tsconfig.json >  .editorconfig > tslint.json files.
+Now before each commit, yout typescript files are linted based on your tsconfig.json >  .editorconfig > tslint.json files.
 
 ```bash
 λ git commit -m "Example precommit"
